@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactMapGL, {Source, Layer} from 'react-map-gl'; 
 import 'mapbox-gl/dist/mapbox-gl.css';
 import bloNoLots from '../data/BloNoLots_PCS_FeaturesToJSON.geojson'
@@ -16,18 +16,22 @@ const layerStyle = {
     }
 };
 
+
+
 //functional Component that loads the base map
 export default function Map(){
 
+    const [viewState, setViewState] = useState({
+        latitude: 40.5,
+        longitude: -88.97,
+        zoom: 12
+    });
 
     return (
         <div>
-            <ReactMapGL 
-            initialViewState={{
-                latitude: 40.5,
-                longitude: -88.977,
-                zoom: 12
-            }}
+            <ReactMapGL
+            {...viewState}
+            onMove={evt => setViewState(evt.viewState)}
             style={{width: '100vw', height: '90vh'}}
             mapStyle="mapbox://styles/mapbox/streets-v9"
             mapboxAccessToken={MAPBOX_TOKEN}>

@@ -17,12 +17,13 @@
   background-color: #d82c34;
   min-height: 5vh;
   width: 100%;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: auto auto auto;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  gap: 100px;
 }
 
 .App-footer {
@@ -37,6 +38,10 @@
   bottom:0;
   width:100%;
   height:5vh;   /* Height of the footer */
+}
+
+.headerColumn p {
+  font-size: 15px;
 }
 
 .App-link {
