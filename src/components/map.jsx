@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import ReactMapGL, {Source, Layer} from 'react-map-gl'; 
+import ReactMapGL, {Source, Layer} from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
-import bloNoLots from '../data/BloNoLots_PCS_FeaturesToJSON.geojson'
+import bloNoLots from '../data/BloNoLots_PCS_FeaturesToJSON.geojson';
 
 //MapBox access token
 const MAPBOX_TOKEN = 
@@ -36,7 +36,7 @@ export default function Map(){
             mapStyle="mapbox://styles/mapbox/streets-v9"
             mapboxAccessToken={MAPBOX_TOKEN}>
                 <Source id='parkingLots' type='geojson' data ={bloNoLots}>
-                <Layer {...layerStyle} />
+                    <Layer {...layerStyle} />
                 </Source>
             </ReactMapGL>
         </div>

@@ -1,29 +1,57 @@
-import './App.css';
-import Map from './components/map'
 
-function App() {
+import React, { Component } from 'react';
+import './App.css';
+import Map from './components/map';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Card from './components/resultCard';
+import Calc from './components/calcButton';
+import InputDistance from './components/routeInput';
+
+
+
+class App extends Component {
+  constructor(props){
+    super(props);
+    this.handleChangeDist = this.handleChangeDist.bind(this);
+    this.state = {
+      dist: 0,
+      isActive: false
+    };
+  };
+
+  handleChangeDist(newDist){
+    this.setState({dist: newDist});
+  };
+
+  // handleActiveStatus(){
+  //   this.setState({ isActive: !this.state.isActive });
+  //   console.log(this.state.isActive);
+  // }
+  render(){
+  const { isActive } = this.state.isActive; 
   return (
     <div className="App">
       <header className="App-header">
         <div className='headerColumn'>
-          <h1>sunSPOt</h1>
+          <Card />
         </div>
         <div className='headerColumn'>
-          <input type='num' placeholder='Trip Distance'></input>
+          <InputDistance dist={this.state.dist} handleChangeDist={this.handleChangeDist}/>
           <p>in miles</p>
         </div>
         <div className='headerColumn'>
-          <button>
-            <span>Calculate Time for Charge</span>
-          </button>
+          <button onClick={() => {
+            this.setState({isActive: !isActive})
+            }} >Change active Status</button>
         </div>
       </header>
       <Map />
       <footer className='App-footer'>
-        <p>Created By James Brokaw</p>
+        <Card />
       </footer>
     </div>
   );
+  }
 }
 
 export default App;
