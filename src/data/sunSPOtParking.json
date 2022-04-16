@@ -1,0 +1,454 @@
+{
+  "type" : "FeatureCollection",
+  "features" : [
+    {
+      "type" : "Feature",
+      "id" : 1,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -88.95678121353896,
+          40.487314741456501
+        ]
+      },
+      "properties" : {
+        "Name" : "EastLand Lot"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 2,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -89.032136025249955,
+          40.495829192876677
+        ]
+      },
+      "properties" : {
+       
+        "Name" : "Strip Mall Locale A"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 3,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -89.041477377195832,
+          40.488457170349996
+        ]
+      },
+      "properties" : {
+        "Name" : "South Walmart Lot"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 4,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -88.915108749731829,
+          40.485038622788949
+        ]
+      },
+      "properties" : {
+        "Name" : "CIRA LOT"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 6,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -88.947612567729337,
+          40.523953613567905
+        ]
+      },
+      "properties" : {
+        "Name" : "Sams North Lot A"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 7,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -88.985312445950143,
+          40.53135365537198
+        ]
+      },
+      "properties" : {
+        "Name" : "Rosa Parks Lot"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 8,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -89.003904187930416,
+          40.532744466544614
+        ]
+      },
+      "properties" : {
+        "Name" : "Corn Crib Lot"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 9,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -88.957675539046164,
+          40.455115231916075
+        ]
+      },
+      "properties" : {
+        "Name" : "StateFarm Corporate South Lot"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 10,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -88.994738136606287,
+          40.493688899190062
+        ]
+      },
+      "properties" : {
+        "Name" : "Kroger - Main Street"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 11,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -88.995902222256817,
+          40.510073595268636
+        ]
+      },
+      "properties" : {
+        "Name" : "ISU Commuter Lot A"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 12,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -88.991963127401391,
+          40.51255769408948
+        ]
+      },
+      "properties" : {
+        "Name" : "Bone Student Lot"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 13,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -88.98379108159682,
+          40.510067058508085
+        ]
+      },
+      "properties" : {
+        "Name" : "Uptown Lot"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 14,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -88.990147031101642,
+          40.537306658377169
+        ]
+      },
+      "properties" : {
+        "Name" : "AMC Normal Lot A"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 15,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -88.988862196108258,
+          40.537586742313216
+        ]
+      },
+      "properties" : {
+        "Name" : "AMC Normal Lot B"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 16,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -88.946683897093024,
+          40.511459168083796
+        ]
+      },
+      "properties" : {
+        "Name" : "Meijer Lot"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 17,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -88.949073679486503,
+          40.502266108244022
+        ]
+      },
+      "properties" : {
+        "Name" : "Undelcared Lot A"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 18,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -88.957669542785425,
+          40.49606824515007
+        ]
+      },
+      "properties" : {
+        "Name" : "Growmark Lot A"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 20,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -88.95525635884907,
+          40.496337013129924
+        ]
+      },
+      "properties" : {
+        "Name" : "Growmark Lot C"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 21,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -88.95423160152194,
+          40.497228988919069
+        ]
+      },
+      "properties" : {
+        "Name" : "Growmark Lot D"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 22,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -88.954985368797622,
+          40.478785062275008
+        ]
+      },
+      "properties" : {
+        "Name" : "StateFarm HQ Lot A"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 23,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -88.956743074198982,
+          40.470367763239118
+        ]
+      },
+      "properties" : {
+        "Name" : "Undelcared Lot B"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 24,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -88.956778336162927,
+          40.511294384013723
+        ]
+      },
+      "properties" : {
+        "Name" : "LandMark Plaza Lot"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 25,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -88.957317936038564,
+          40.507900798062828
+        ]
+      },
+      "properties" : {
+        "Name" : "Target Lot"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 26,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -88.953927664293275,
+          40.475895974904219
+        ]
+      },
+      "properties" : {
+        "Name" : "StateFarm HQ Lot B"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 28,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -89.032136025249955,
+          40.495829192876677
+        ]
+      },
+      "properties" : {
+        "Name" : "Strip Mall Locale A"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 29,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -89.041477377195832,
+          40.488457170349996
+        ]
+      },
+      "properties" : {
+        "Name" : "South Walmart Lot"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 31,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -88.920590236898931,
+          40.492940268586942
+        ]
+      },
+      "properties" : {
+        "Name" : "McGraw Parking Lot A"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 32,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -88.947612567729337,
+          40.523953613567905
+        ]
+      },
+      "properties" : {
+        "Name" : "Sams North Lot A"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 33,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -88.994738028503022,
+          40.493725582155264
+        ]
+      },
+      "properties" : {
+        "Name" : "Kroger Main St. Parkinglot"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 34,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -88.956444358374782,
+          40.489847098610433
+        ]
+      },
+      "properties" : {
+        "Name" : "Strip Mall Locale Empire"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 35,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -88.95600494811319,
+          40.496626004402771
+        ]
+      },
+      "properties" : {
+        "Name" : "Growmark Lot B"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 36,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -88.956397473215389,
+          40.504889716438754
+        ]
+      },
+      "properties" : {
+        "Name" : "Crunch A"
+      }
+    }
+  ]
+}
