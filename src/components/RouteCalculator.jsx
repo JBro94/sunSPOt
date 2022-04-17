@@ -1,72 +1,70 @@
 import React from 'react';
+//import Select from 'react-select';
 import '../App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
 import lots from '../data/sunSPOtParking.json';
 
-
+const options = lots.features;
 
 class RouteCalculator extends React.Component {
     constructor(props){
         super(props);
         this.state = {
             route: [
-                {id: 1, start: null, destination: null, timeToCharge: 0}
+                {id: 1, start: [], destination: [], timeToCharge: 0}
             ]
         }
-
-        this.handleChangeStart = this.handleChangeStart.bind(this);
-        this.handleChangeDest = this.handleChangeDest.bind(this);
-        this.handleChargeCalculation = this.handleChargeCalculation.bind(this);
-    }
-    // handleChangeDist = (e) => {
-    //     const routes = [...this.state.route];
-    //     routes[0].dist = Number(e.target.value);
-    //     console.log(routes[0].dist);
-    //     this.setState([...routes]);
-    // };
-
-    handleChangeStart = (e) => {
-        const routes = [...this.state.route];
-        routes[0].start = e.target.value;
-        console.log(routes[0].start);
-        this.setState([...routes]);
+        this.handleDestChange = this.handleDestChange.bind(this);
+        this.handleStartChange = this.handleStartChange.bind(this);
+        this.handleRouteCalculation = this.handleRouteCalculation.bind(this);
     }
 
-    handleChangeDest = (e) => {
-        const routes = [...this.state.route];
-        routes[0].destination = e.target.value;
-        console.log(routes[0].destination);
-        this.setState([...routes]);
+    handleStartChange(e){
+        const route = [...this.state.route];
+        route[0].start = (e.target.value.split(','));
+        route[0].start[0] = Number(route[0].start[0]);
+        route[0].start[1] = Number(route[0].start[1]);
+        this.setState([...route]);
     }
 
-    handleChargeCalculation = () => {
-        const routes = [...this.state.route];
-        routes[0].timeToCharge = (routes[0].dist/25)*60;
-        
-        if(routes[0].timeToCharge >= 60){
-            routes[0].timeToCharge = routes[0].timeToCharge/60;
-            console.log(routes[0].timeToCharge + " hr");
-        }else{
-            console.log(routes[0].timeToCharge + " min");
-        }
-        this.setState([...routes]);
+    handleDestChange(e){
+        const route = [...this.state.route];
+        route[0].destination = (e.target.value.split(','));
+        route[0].destination[0] = Number(route[0].destination[0]);
+        route[0].destination[1] = Number(route[0].destination[1]);
+        this.setState([...route]);
+    }
+ 
+    handleRouteCalculation () {
+        //API call is made here with the coordinates of the start and destination
     }
 
-    componentDidMount(){
-        console.log(lots.features[0].geometry.coordinates);
-    }
     render() { 
         return (
         <div className='routeCalc'>
             <div className='roputeInput'>
-                <input placeholder='Start' onChange={this.handleChangeStart}/>
+                <label>Start Location</label>
+                <select
+                    onChange={this.handleStartChange}
+                >
+                    {options.map((option) => (
+                        <option key={option.id} value={option.geometry.coordinates}>{option.properties.Name}</option>
+                    ))}
+                </select>
             </div>
             <div>
-                <input placeholder='Destination' onChange={this.handleChangeDest}/>
+                <label>Destination</label>
+                <select
+                    onChange={this.handleDestChange}
+                >
+                    {options.map((option) => (
+                        <option key={option.id} value={option.geometry.coordinates}>{option.properties.Name}</option>
+                    ))}
+                </select>
             </div>
             <div className='routeBtn'>
-                <Button variant='primary' onClick={this.handleChargeCalculation}>
+                <Button variant='primary' onClick={this.handleRouteCalculation}>
                     <span>Calculate Route & Required Charging Time</span>
                 </Button>
             </div>
