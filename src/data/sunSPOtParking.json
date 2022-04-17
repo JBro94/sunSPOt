@@ -26,7 +26,6 @@
         ]
       },
       "properties" : {
-       
         "Name" : "Strip Mall Locale A"
       }
     },
@@ -340,34 +339,6 @@
     },
     {
       "type" : "Feature",
-      "id" : 28,
-      "geometry" : {
-        "type" : "Point",
-        "coordinates" : [
-          -89.032136025249955,
-          40.495829192876677
-        ]
-      },
-      "properties" : {
-        "Name" : "Strip Mall Locale A"
-      }
-    },
-    {
-      "type" : "Feature",
-      "id" : 29,
-      "geometry" : {
-        "type" : "Point",
-        "coordinates" : [
-          -89.041477377195832,
-          40.488457170349996
-        ]
-      },
-      "properties" : {
-        "Name" : "South Walmart Lot"
-      }
-    },
-    {
-      "type" : "Feature",
       "id" : 31,
       "geometry" : {
         "type" : "Point",
@@ -378,20 +349,6 @@
       },
       "properties" : {
         "Name" : "McGraw Parking Lot A"
-      }
-    },
-    {
-      "type" : "Feature",
-      "id" : 32,
-      "geometry" : {
-        "type" : "Point",
-        "coordinates" : [
-          -88.947612567729337,
-          40.523953613567905
-        ]
-      },
-      "properties" : {
-        "Name" : "Sams North Lot A"
       }
     },
     {

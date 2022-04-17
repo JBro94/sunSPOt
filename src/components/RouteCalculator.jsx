@@ -11,18 +11,34 @@ class RouteCalculator extends React.Component {
         super(props);
         this.state = {
             route: [
-                {id: 1, dist: 0, timeToCharge: 0, direction: null}
+                {id: 1, start: null, destination: null, timeToCharge: 0}
             ]
         }
-        this.handleChangeDist = this.handleChangeDist.bind(this);
+
+        this.handleChangeStart = this.handleChangeStart.bind(this);
+        this.handleChangeDest = this.handleChangeDest.bind(this);
         this.handleChargeCalculation = this.handleChargeCalculation.bind(this);
     }
-    handleChangeDist = (e) => {
+    // handleChangeDist = (e) => {
+    //     const routes = [...this.state.route];
+    //     routes[0].dist = Number(e.target.value);
+    //     console.log(routes[0].dist);
+    //     this.setState([...routes]);
+    // };
+
+    handleChangeStart = (e) => {
         const routes = [...this.state.route];
-        routes[0].dist = Number(e.target.value);
-        console.log(routes[0].dist);
+        routes[0].start = e.target.value;
+        console.log(routes[0].start);
         this.setState([...routes]);
-    };
+    }
+
+    handleChangeDest = (e) => {
+        const routes = [...this.state.route];
+        routes[0].destination = e.target.value;
+        console.log(routes[0].destination);
+        this.setState([...routes]);
+    }
 
     handleChargeCalculation = () => {
         const routes = [...this.state.route];
@@ -44,11 +60,14 @@ class RouteCalculator extends React.Component {
         return (
         <div className='routeCalc'>
             <div className='roputeInput'>
-                <input placeholder='in miles' onChange={this.handleChangeDist}/>
+                <input placeholder='Start' onChange={this.handleChangeStart}/>
+            </div>
+            <div>
+                <input placeholder='Destination' onChange={this.handleChangeDest}/>
             </div>
             <div className='routeBtn'>
                 <Button variant='primary' onClick={this.handleChargeCalculation}>
-                    <span>Calc Distance to Charge</span>
+                    <span>Calculate Route & Required Charging Time</span>
                 </Button>
             </div>
         </div>

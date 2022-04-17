@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 import './App.css';
 import Map from './components/map';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Card from './components/badge';
-import RouteCalculator from './components/RouteCalculator';
+import Card from './components/card';
+import RouteCalculator from './components/routeCalculator';
 
 
 

@@ -6,7 +6,7 @@ class Card extends Component {
         return (
             <React.Fragment>
                 <div>
-                    <h1>
+                    <h1 className='app-card'>
                         {this.props.message}
                     </h1>
                 </div>

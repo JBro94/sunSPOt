@@ -15,6 +15,7 @@
   gap: 150px;
 }
 
+
 .App-footer {
   background-color: #282c34;
   display: flex;
@@ -27,6 +28,10 @@
   bottom:0;
   width:100%;
   height: 5vh;   /* Height of the footer */
+}
+
+.app-card{
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
 }
 
 .headerColumn p {
@@ -44,13 +49,20 @@
     padding: 20px;
 }
 
+.marker-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
 .routeCalc{
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: auto auto auto;
   gap: 10em;
   margin-top: 5px;
   margin-bottom: 5px;
 }
+
 /* 
 .routeInput {
 }

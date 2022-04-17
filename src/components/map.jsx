@@ -1,24 +1,13 @@
 import React, { useState } from 'react';
-import ReactMapGL, {Source, Layer} from 'react-map-gl';
+import ReactMapGL, {Marker, Popup} from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import bloNoLots from '../data/sunSPOtParking.json';
+import '../App.css';
 
 
 //MapBox access token
 const MAPBOX_TOKEN = 
 "pk.eyJ1Ijoiamxicm9rIiwiYSI6ImNsMXB1b3dxdzAxdzUzY3M2MzEwMjMxcWkifQ.Jis7AzQxUBN6clwg2WuGIQ";
-
-const layerStyle = {
-    id: 'points',
-    type: 'circle',
-    paint: {
-        'circle-radius': 5,
-        'circle-color': '#d51818',
-        'circle-stroke-color': '#000000',
-        'circle-stroke-width': 1
-    }
-};
-
 
 //functional Component that loads the base map
 export default function Map(){
@@ -29,17 +18,43 @@ export default function Map(){
         zoom: 12
     });
 
+    const [selectedLot, setSelectedLot] = useState(null);
+
     return (
-        <div>
+        <div className='blo-no-map'>
             <ReactMapGL
             {...viewState}
+            mapboxAccessToken={MAPBOX_TOKEN}
             onMove={evt => setViewState(evt.viewState)}
             style={{width: '100vw', height: '90vh'}}
             mapStyle="mapbox://styles/mapbox/streets-v9"
-            mapboxAccessToken={MAPBOX_TOKEN}>
-                <Source id='parkingLots' type='geojson' data ={bloNoLots}>
-                    <Layer {...layerStyle} />
-                </Source>
+            >
+                {bloNoLots.features.map((lot) => (
+                    <Marker key={lot.properties.Name} latitude={lot.geometry.coordinates[1]} longitude={lot.geometry.coordinates[0]}>
+                        <button className='marker-btn' onClick={(e) => {
+                            e.preventDefault();
+                            setSelectedLot(lot);
+                        }}>
+                            <img src='/EV_Icon.png' alt='chargingIcon' width={20} height={20}/>
+                       </button>
+                    </Marker>
+                ))}
+
+
+                {selectedLot ? (
+                    console.log(selectedLot.geometry.coordinates),
+                    <Popup 
+                        latitude={selectedLot.geometry.coordinates[1]} 
+                        longitude={selectedLot.geometry.coordinates[0]}
+                        onClose={() => {
+                            setSelectedLot(null);
+                        }}
+                    >
+                        <div>
+                           <p>{selectedLot.properties.Name}</p>
+                        </div>
+                    </Popup>
+                ) : null}
             </ReactMapGL>
         </div>
     )
