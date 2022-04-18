@@ -12,7 +12,7 @@ class RouteCalculator extends React.Component {
         super(props);
         this.state = {
             route: [
-                {id: 1, start: [], destination: [], timeToCharge: 0}
+                {id: 1, start: [], destination: [], timeToCharge: 0, distance: 0}
             ]
         }
         this.handleDestChange = this.handleDestChange.bind(this);
@@ -36,8 +36,21 @@ class RouteCalculator extends React.Component {
         this.setState([...route]);
     }
  
-    handleRouteCalculation () {
-        //API call is made here with the coordinates of the start and destination
+    async handleRouteCalculation () {
+        const route = [...this.state.route];
+        const locales = `${route[0].start[0]},${route[0].start[1]};${route[0].destination[0]},${route[0].destination[1]}`;
+        console.log(locales);
+        const query = await fetch(
+            `https://api.mapbox.com/directions/v5/mapbox/driving/${locales}?geometries=geojson&access_token=pk.eyJ1Ijoiamxicm9rIiwiYSI6ImNsMXB1b3dxdzAxdzUzY3M2MzEwMjMxcWkifQ.Jis7AzQxUBN6clwg2WuGIQ`,
+            { method: 'GET'}
+        );
+        const json = await query.json();
+        const data = json.routes[0];
+        route[0].distance = data.distance;
+        route[0].distance = (route[0].distance * .00062137)
+        route[0].timeToCharge = (route[0].distance/25)*60;
+        this.setState([...route]);
+        console.log(this.state.route[0]);
     }
 
     render() { 
