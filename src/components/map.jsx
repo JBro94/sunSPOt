@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import ReactMapGL, {Marker, Popup} from 'react-map-gl';
+import ReactMapGL, {Marker, Popup, Source, Layer} from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import bloNoLots from '../data/sunSPOtParking.json';
 import '../App.css';
@@ -10,14 +10,12 @@ const MAPBOX_TOKEN =
 "pk.eyJ1Ijoiamxicm9rIiwiYSI6ImNsMXB1b3dxdzAxdzUzY3M2MzEwMjMxcWkifQ.Jis7AzQxUBN6clwg2WuGIQ";
 
 //functional Component that loads the base map
-export default function Map(){
-
+export default function Map(props){
     const [viewState, setViewState] = useState({
         latitude: 40.5,
         longitude: -88.97,
         zoom: 12
     });
-
     const [selectedLot, setSelectedLot] = useState(null);
 
     return (
@@ -39,8 +37,6 @@ export default function Map(){
                        </button>
                     </Marker>
                 ))}
-
-
                 {selectedLot ? (
                     console.log(selectedLot.geometry.coordinates),
                     <Popup 
@@ -55,6 +51,23 @@ export default function Map(){
                         </div>
                     </Popup>
                 ) : null}
+
+                {props.displayRoute && (
+                    <Source id='route' type='geojson' data={props.route}>
+                        <Layer
+                            id='routeLayer'
+                            type='line'
+                            source='path'
+                            layout = {{
+                                'line-join': 'round',
+                                'line-cap': 'round'
+                            }}
+                            paint={{
+                                'line-color': '#4545dd',
+                                'line-width': 5
+                            }}
+                        />
+                    </Source>)}
             </ReactMapGL>
         </div>
     )
