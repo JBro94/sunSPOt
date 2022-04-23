@@ -1,70 +1,17 @@
-# Getting Started with Create React App
+This project is named sunSPOt or the Solar Panel Optimization application. 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+the purposes of this project was to create a web base map designed to show ideal locations for solar powered EV charging ports and offer routing assistance and charge reccomendation for a Rivian R1t (by default).  
 
-## Available Scripts
+the project consisted of 3 steps: Data Collection, Coding the UI, calculating the route and RCT ( reccomended charge time ).  
 
-In the project directory, you can run:
+Data collection was accomplished by digitizing parkinglots in Bloomington-Normal area on Google Earth. The parkinglots chosen matched criteria that would be useful to both solar panels and the placement of current 240V EV charging ports.  then the KMZ file of the locations was exported and converted into a arcgis shapefile, and geojson for use in the project later.  With the centroids of the polygons created a test run of the routing analysis was completed in ArcGIS Pro where the optimal path (in this instance shortest distance between two locations) was calculated. This was done in order to get a baseline of what to expect in later analysis.  Links to understand arcGIS routing analysis is provided below: 
 
-### `npm start`
+https://pro.arcgis.com/en/pro-app/2.8/help/analysis/networks/route-analysis-layer.htm
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+With an idea of what routing and the distances between any of the given locations an UI/basemap was created using the JavaScript libraries React and MapBox.  These resouces provided an easy to design and implementation for use among several platforms and is ready as a deployable map base. 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Layers in this map include a base map, ev icons indicating the charging locations, and header where a user can select the locations they wish to travel between and a button to make the call to the API.  
 
-### `npm test`
+The button activates the method that calls the mapbox directions API and returns a layer represented by a geojson object or a blue line on the map.  A modal will also appear with the calculated distance in miles between the two locations and how long the EV will need to charge at the start postion to reach the second location, assuming the EV has a 0% charge at the start of the trip.  
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
